@@ -4,15 +4,32 @@
 	<title>Akademin quiz</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body class="">
 	<h1>My simple quiz</h1>
+	<button id="button_theme" class="darkmode">Darkmode</button>
 
 	<ul class="questions"></ul>
 
-	<p>Press the submit button when you are ready to see your result</p>
+	<p>Press the button below when you are ready to see the result</p>
 	<p id="result"></p>
 	<button id="submit">See result</button>
 
 	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		const themeButton = document.querySelector('#button_theme');
+		const body = document.body
+
+		themeButton.addEventListener('click', () => {
+			const isDarkTheme = themeButton.classList.contains('darkmode');
+			if (isDarkTheme) {
+				themeButton.className = 'lightmode';
+				body.className = 'darkmode';
+			} else {
+				themeButton.className = 'darkmode'
+				body.className = '';
+			}
+		})
+
+	</script>
 </body>
 </html>

@@ -1,8 +1,6 @@
-const submitButton = document.querySelector('#submit');
 const quesContent  = document.querySelector('.questions');
 const resultPara   = document.querySelector('#result');
-
-// this is just a test comment2
+const submitButton = document.querySelector('#submit');
 
 const q_data = [
 	{
@@ -95,7 +93,7 @@ const ResultText = [
 ];
 
 let inner_html = '';
-q_data.forEach((data, qIndex) => {
+q_data.forEach((data, qIndex) => { // Generate questions
 	let question_html = '';
 
 	// options
@@ -117,7 +115,7 @@ q_data.forEach((data, qIndex) => {
 })
 quesContent.innerHTML = inner_html;
 
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', () => { // Show answer result
 	let score = 0;
 
 	q_data.forEach((question, qIndex) => {
@@ -129,6 +127,7 @@ submitButton.addEventListener('click', () => {
 
 		const isCorrect = EvaluateAnswer[question.inputType](options, question);
 		li.classList.add(isCorrect && 'correct' || 'wrong');
+		li.classList.add('solved')
 
 		if (isCorrect) {
 			score++;

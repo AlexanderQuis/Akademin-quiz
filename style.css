@@ -1,9 +1,61 @@
 html {
 	font-family: monospace;
 }
+
 body {
 	padding: 0 1em;
+	transition: all 0.2s;
 }
+
+body.darkmode {
+	background-color: #334;
+	color: #ccc;
+
+	--correct-color: #474;
+	--wrong-color: #944;
+	--almost-color: #994;
+	--ques-bg-color: #445;
+}
+
+body:not(.darkmode) {
+	--correct-color: #aca;
+	--wrong-color: #faa;
+	--almost-color: #ffa;
+	--ques-bg-color: #eee;
+}
+
+h1 {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+#button_theme {
+	display: inline-block;
+	padding: 0.5em 1em;
+	transition: all 0.2s;
+	text-align: center;
+	cursor: pointer;
+
+	font-weight: 600;
+}
+
+#button_theme:hover {
+	background-color: #888;
+	border: 2px solid #555;
+}
+
+button.darkmode {
+	background-color: #555;
+	border: 2px solid #222;
+	color: white;
+}
+button.lightmode {
+	background-color: #ccc;
+	border: 2px solid #aaa;
+	color: black;
+}
+
+
 
 .questions {
 	padding: 0;
@@ -11,21 +63,25 @@ body {
 
 .questions li {
 	list-style-type: none;
-	outline: 1px solid #000;
+
 	padding: 1.25em;
+	outline: 1px solid #000;
+	background-color: var(--ques-bg-color);
 
 	margin-bottom: 1px;
+	transition: background 0.2s;
 }
 
 
 .questions .correct {
-	background-color: #aca;
+	background-color: var(--correct-color);
 }
+
 .questions .wrong {
-	background-color: #faa;
+	background-color: var(--wrong-color);
 }
 .questions .ques_close {
-	background-color: #ffa;
+	background-color: var(--almost-color);
 }
 
 .questions h4 {
