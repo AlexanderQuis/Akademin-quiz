@@ -1,0 +1,47 @@
+html {
+	font-family: monospace;
+}
+body {
+	padding: 0 1em;
+}
+
+.questions {
+	padding: 0;
+}
+
+.questions li {
+	list-style-type: none;
+	outline: 1px solid #000;
+	padding: 1.25em;
+
+	margin-bottom: 1px;
+}
+
+
+.questions .correct {
+	background-color: #aca;
+}
+.questions .wrong {
+	background-color: #faa;
+}
+.questions .ques_close {
+	background-color: #ffa;
+}
+
+.questions h4 {
+	margin: 0 0 1em 0;
+}
+.questions img {
+	height: 200px;
+}
+
+.questions input {
+	margin: 0;
+}
+.questions label {
+	margin: 0 1em 0 0;
+}
+
+#result {
+	font-weight: 800;
+}
