@@ -2,7 +2,7 @@ const submitButton = document.querySelector('#submit');
 const quesContent  = document.querySelector('.questions');
 const resultPara   = document.querySelector('#result');
 
-// this is just a test comment
+// this is just a test comment2
 
 const q_data = [
 	{
