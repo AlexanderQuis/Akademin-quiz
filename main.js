@@ -8,7 +8,7 @@ const q_data = [
 		inputType: 'checkbox',
 
 		options: ['HTML', 'SASS', 'Javascript', 'MySQL', 'PHP', 'JQuery', 'CSS'],
-		answer: [1, 2, 6],
+		answer: [0, 2, 6],
 	},
 
 	{
@@ -21,18 +21,18 @@ const q_data = [
 
 	{
 		title: 'What role does HTML play on a website?',
-		inputType: 'checkbox',
+		inputType: 'radio',
 
 		options: ['To apply styling of the elements', 'Defining the structure of the page', 'Neither of the options'],
-		answer: [1],
+		answer: 1,
 	},
 
 	{
 		title: 'Is there any difference between defining variables using "var" or "let"?',
-		inputType: 'checkbox',
+		inputType: 'radio',
 
 		options: ['Yes "Let" doesn\'t allow the variable to be reassigned', 'No, no they\'re the same', 'Neither of the options'],
-		answer: [2],
+		answer: 2,
 	},
 
 	{
@@ -68,7 +68,7 @@ const q_data = [
 	},
 
 	{
-		title: 'Which of the following functions can be used to get a element in Javascript?',
+		title: 'Select the functions can be used to get a element in Javascript.',
 		inputType: 'checkbox',
 
 		displayAsOwnRow: true,
