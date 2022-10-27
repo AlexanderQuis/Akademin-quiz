@@ -15,6 +15,10 @@ body.darkmode {
 	--wrong-color: #944;
 	--almost-color: #994;
 	--ques-bg-color: #445;
+
+	--theme-bt-bg: #ccc;
+	--theme-bt-border: #aaa;
+	--theme-bt-color: black;
 }
 
 body:not(.darkmode) {
@@ -22,6 +26,10 @@ body:not(.darkmode) {
 	--wrong-color: #faa;
 	--almost-color: #ffa;
 	--ques-bg-color: #eee;
+
+	--theme-bt-bg: #556;
+	--theme-bt-border: #222;
+	--theme-bt-color: white;
 }
 
 h1 {
@@ -37,25 +45,16 @@ h1 {
 	cursor: pointer;
 
 	font-weight: 600;
+
+	background-color: var(--theme-bt-bg);
+	border: 2px solid var(--theme-bt-border);
+	color: var(--theme-bt-color);
 }
 
 #button_theme:hover {
-	background-color: #888;
+	background-color: #889;
 	border: 2px solid #555;
 }
-
-button.darkmode {
-	background-color: #555;
-	border: 2px solid #222;
-	color: white;
-}
-button.lightmode {
-	background-color: #ccc;
-	border: 2px solid #aaa;
-	color: black;
-}
-
-
 
 .questions {
 	padding: 0;
@@ -70,6 +69,11 @@ button.lightmode {
 
 	margin-bottom: 1px;
 	transition: background 0.2s;
+}
+
+.ques_index {
+	font-weight: 1000;
+	font-size: 1.2em;
 }
 
 
@@ -100,4 +104,18 @@ button.lightmode {
 
 #result {
 	font-weight: 800;
+}
+
+
+#submit {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.16, rgb(207, 207, 207)), color-stop(0.79, rgb(252, 252, 252)));
+	background-image: -moz-linear-gradient(center bottom, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%);
+	background-image: linear-gradient(to top, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%); 
+	padding: 3px;
+	border: 1px solid #000;
+	color: black;
+	text-decoration: none;
 }

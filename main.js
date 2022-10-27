@@ -4,7 +4,39 @@ const submitButton = document.querySelector('#submit');
 
 const q_data = [
 	{
-		title: 'Is tomato a fruit?',
+		title: 'Which of these languages are the 3 main buildings blocks for creating a website?',
+		inputType: 'checkbox',
+
+		options: ['HTML', 'SASS', 'Javascript', 'MySQL', 'PHP', 'JQuery', 'CSS'],
+		answer: [1, 2, 6],
+	},
+
+	{
+		title: 'Is HTML a programming language?',
+		inputType: 'radio',
+
+		options: ['Yes', 'No'],
+		answer: 1,
+	},
+
+	{
+		title: 'What role does HTML play on a website?',
+		inputType: 'checkbox',
+
+		options: ['To apply styling of the elements', 'Defining the structure of the page', 'Neither of the options'],
+		answer: [1],
+	},
+
+	{
+		title: 'Is there any difference between defining variables using "var" or "let"?',
+		inputType: 'checkbox',
+
+		options: ['Yes "Let" doesn\'t allow the variable to be reassigned', 'No, no they\'re the same', 'Neither of the options'],
+		answer: [2],
+	},
+
+	{
+		title: 'Can you assign variables in CSS?',
 		inputType: 'radio',
 
 		options: ['Yes', 'No'],
@@ -12,21 +44,44 @@ const q_data = [
 	},
 
 	{
-		title: 'How many tomatos can a human consume?',
-		inputType: 'checkbox',
-		multiCorrect: false,
+		title: 'JS behavior: Select correct output for the coding snippet:<br><br>8 + "1"',
+		inputType: 'radio',
 
-		options: ['1', '3', '8', '10', '19'],
-		answer: [3, 4],
+		options: ['"81"', '9', 'NaN', 'Undefined'],
+		answer: 0,
+	},
+	{
+		title: 'JS behavior: Select correct output for the coding snippet:<br><br>85 - "5"',
+		inputType: 'radio',
+
+		options: ['"8"', '80', 'NaN', 'Undefined'],
+		answer: 1,
 	},
 
 	{
-		title: 'How much bread do you need to consume?',
+		title: 'Which property is used to remove the underline from a hyperlink?<br><br><a style="text-decoration: underline; cursor: pointer;">Example hyperlink</a>',
 		inputType: 'checkbox',
-		multiCorrect: false,
 
-		options: ['1', '3', '8', '10', '19'],
-		answer: [3, 4],
+		displayAsOwnRow: true,
+		options: ['text-decoration: none;', 'color: black;', 'display: none;', 'cursor: default;'],
+		answer: [0],
+	},
+
+	{
+		title: 'Which of the following functions can be used to get a element in Javascript?',
+		inputType: 'checkbox',
+
+		displayAsOwnRow: true,
+		options: ['getElementFromId()', 'getElementById()', 'getElementsByClass()', 'getElementsByClassName()', 'querySelector()', 'querySelectorAll()', 'firstElementChild()'],
+		answer: [1, 3, 4, 5],
+	},
+
+	{
+		title: 'Is tomato a fruit?',
+		inputType: 'radio',
+
+		options: ['Yes', 'No'],
+		answer: 0,
 	},
 ];
 
@@ -101,12 +156,12 @@ q_data.forEach((data, qIndex) => { // Generate questions
 		let optionId = 'o' + qIndex + '_' + oIndex
 		question_html += `
 		<input type="${data.inputType}" name="${qIndex}" id="${optionId}">
-		<label for="${optionId}">${oName}</label>`
+		<label for="${optionId}">${oName}</label>` + (data.displayAsOwnRow && '<br>'|| '');
 	})
 
 	inner_html += `
 		<li id="q${qIndex}">
-			<h4>${data.title}</h4>
+			<h4><span class="ques_index">${qIndex + 1}.</span> ${data.title}</h4>
 			<div class="options">
 				${question_html}
 			</div>

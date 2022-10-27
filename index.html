@@ -20,13 +20,11 @@
 		const body = document.body
 
 		themeButton.addEventListener('click', () => {
-			const isDarkTheme = themeButton.classList.contains('darkmode');
+			const isDarkTheme = body.classList.contains('darkmode');
 			if (isDarkTheme) {
-				themeButton.className = 'lightmode';
-				body.className = 'darkmode';
-			} else {
-				themeButton.className = 'darkmode'
 				body.className = '';
+			} else {
+				body.className = 'darkmode';
 			}
 		})
 
